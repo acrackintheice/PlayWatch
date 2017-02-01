@@ -4,7 +4,17 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+GET     /                           controllers.Application.index
+
+# CREATE
+POST    /todos                      controllers.Application.create
+# READ
+GET     /todos                      controllers.Application.readAll
+GET     /todos/:id                  controllers.Application.read(id: Long)
+# UPDATE
+POST    /todos/:id              controllers.Application.update(id:Long)
+# DELETE
+POST    /todos/:id/delete       controllers.Application.delete(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
